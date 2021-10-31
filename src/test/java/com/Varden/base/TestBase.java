@@ -3,6 +3,7 @@ package com.Varden.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -62,9 +63,7 @@ public void setUp() throws InterruptedException {
 		} catch (IOException e) {				
 			e.printStackTrace();
 		}
-		
-		
-		
+				
 		if(config.getProperty("browser").equalsIgnoreCase("firefox")) {
 			path=System.getProperty("user.dir");				
 			System.setProperty("webdriver.gecko.driver", path+"\\drivers\\geckodriver\\geckodriver.exe");				
@@ -76,13 +75,10 @@ public void setUp() throws InterruptedException {
 			System.setProperty("webdriver.ie.driver", path+"\\drivers\\geckodriver\\IEDriverServer.exe");
 			driver=new InternetExplorerDriver();
 		}
-
-
 		driver.navigate().to(config.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),TimeUnit.SECONDS);
 		
-
 		String actualUrl = driver.getCurrentUrl();
 		String expectedUrl = config.getProperty("url");
 		Assert.assertEquals(expectedUrl, actualUrl);		
@@ -157,7 +153,21 @@ public boolean verifyPageTitle(String expectedPageTitle)
 	else
 		return false;
 }
-	 
+ 
+
+
+/**
+ * This method is used to select all checkboxes
+ * @param by 
+ */	
+public void selectAllCheckboxes(String by) {
+	List<WebElement> list = driver.findElements(By.xpath(by));
+	for(int i=0; i<list.size()-1;i++) {
+		list.get(i).click();		
+	}
+}
+
+
 
 
 /**

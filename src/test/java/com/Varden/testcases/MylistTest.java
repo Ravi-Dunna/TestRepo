@@ -23,23 +23,20 @@ public class MylistTest extends TestBase{
  * This method is used to navigate to an existing list  
  * Finding units with search (Example:Gotland)
  * Adding units/items to the list  
+ * @throws InterruptedException 
  */	
 @Test(priority=0)
 public void myList() {
-	log.debug("working on list");
-	System.out.println("login test");
-	// Assert.assertTrue(findElement(By.xpath(OR.getProperty("coockieAcceptOKButton"))));	
-
-	findElement(OR.getProperty("coockieAcceptOKButton"));
+	log.debug("finding units in my list for Gotland");		
+    //calling find element method and doing assertion
+	Assert.assertTrue(findElement(OR.getProperty("coockieAcceptOKButton")));
 	driver.findElement(By.xpath(OR.getProperty("createDeviceListButton"))).click();		
 	driver.findElement(By.xpath(OR.getProperty("myListDefaultLink"))).click();		
 	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys("gotland");
+	//calling explicit wait method
 	waitForElement(OR.getProperty("dropdown"));
-
-	List<WebElement> list = driver.findElements(By.xpath(OR.getProperty("selectCheckboxes")));
-	for(int i=0; i<list.size()-1;i++) {
-		list.get(i).click();
-	}
+	//calling selectAllCheckboxes method
+	selectAllCheckboxes(OR.getProperty("selectCheckboxes"));	
 	driver.findElement(By.xpath(OR.getProperty("listNameCheckbox"))).click();
 }
 
@@ -54,18 +51,13 @@ public void myList() {
 public void createNewList() {	
 	driver.findElement(By.xpath(OR.getProperty("backToMyDeviceListLink"))).click();		
 	driver.findElement(By.xpath(OR.getProperty("createDeviceListButton"))).click();
-	//Thread.sleep(1000);
-	
+	//Thread.sleep(1000);	
 	driver.findElement(By.xpath("//a[@title='Min lista (2)']")).click();
 	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys("gotland");
+	//calling explicit wait method
 	waitForElement(OR.getProperty("dropdown"));
-	
-	
-	List<WebElement> list = driver.findElements(By.xpath(OR.getProperty("selectCheckboxes")));
-	for(int i=0; i<list.size()-1;i++) {
-		System.out.println(list.get(i).getText());		
-		list.get(i).click();
-	}
+	//calling selectAllCheckboxes method
+	selectAllCheckboxes(OR.getProperty("selectCheckboxes"));	
 	driver.findElement(By.xpath(OR.getProperty("listNameCheckbox"))).click();
 }
 
@@ -107,8 +99,7 @@ public void changeColorOfUnit() {
 public void removeList() {
 	//Thread.sleep(1000);    
 	List<WebElement> list = driver.findElements(By.xpath(OR.getProperty("removeListButton")));
-	for(int i=0; i<list.size();i++) {		
-		System.out.println(list.get(i).getText());		
+	for(int i=0; i<list.size();i++) {			
 		list.get(i).click();
 	}
 }

@@ -6,10 +6,9 @@
       <class name="com.Varden.testcases.MylistTest">
         <methods>
           <include name="changeColorOfUnit"/>
+          <include name="myList"/>
           <include name="setUp"/>
-          <include name="removeList"/>
           <include name="name"/>
-          <include name="changeNameOfList"/>
           <include name="tearDown"/>
           <include name="createNewList"/>
         </methods>
