@@ -32,7 +32,7 @@ public void myList() {
 	Assert.assertTrue(findElement(OR.getProperty("coockieAcceptOKButton")));
 	driver.findElement(By.xpath(OR.getProperty("createDeviceListButton"))).click();		
 	driver.findElement(By.xpath(OR.getProperty("myListDefaultLink"))).click();		
-	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys("gotland");
+	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys(config.getProperty("searchKeyWord"));
 	//calling explicit wait method
 	waitForElement(OR.getProperty("dropdown"));
 	//calling selectAllCheckboxes method
@@ -53,7 +53,7 @@ public void createNewList() {
 	driver.findElement(By.xpath(OR.getProperty("createDeviceListButton"))).click();
 	//Thread.sleep(1000);	
 	driver.findElement(By.xpath("//a[@title='Min lista (2)']")).click();
-	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys("gotland");
+	driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys(config.getProperty("searchKeyWord"));
 	//calling explicit wait method
 	waitForElement(OR.getProperty("dropdown"));
 	//calling selectAllCheckboxes method
@@ -70,7 +70,7 @@ public void createNewList() {
 @Test(priority=2)
 public void changeNameOfList() {
 	driver.findElement(By.xpath(OR.getProperty("listNameCheckbox"))).clear();	
-	driver.findElement(By.xpath(OR.getProperty("listNameCheckbox"))).sendKeys("Ravi List");
+	driver.findElement(By.xpath(OR.getProperty("listNameCheckbox"))).sendKeys(config.getProperty("searchKeyWordNew"));
 }
 
 
@@ -108,11 +108,13 @@ public void removeList() {
 
 
 /**
- * This method is used to checking for row count 
- * after deleting all the units/items 
+ * This method is used to check nothing displayed
+ * when searching for something that doesn’t exist 
  */	
 @Test(priority=5)
-public void name() {	
+public void noDispalyForInvalidSearch() {
+	  driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).clear();
+	  driver.findElement(By.xpath(OR.getProperty("searchDevicesTextBox"))).sendKeys(config.getProperty("invalidValue"));
 	  WebElement table = driver.findElement(By.xpath(OR.getProperty("tableRowCount")));
       String rowCount = table.getAttribute("aria-rowcount");
       System.out.println(rowCount);

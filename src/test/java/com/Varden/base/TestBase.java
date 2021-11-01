@@ -162,10 +162,14 @@ public boolean verifyPageTitle(String expectedPageTitle)
  */	
 public void selectAllCheckboxes(String by) {
 	List<WebElement> list = driver.findElements(By.xpath(by));
-	for(int i=0; i<list.size()-1;i++) {
-		list.get(i).click();		
-	}
-}
+	if (list.size()!=0) {	
+		for(int i=0; i<list.size()-1;i++) {
+			boolean checked = list.get(i).isSelected();
+			if (!checked) {
+				list.get(i).click();
+			}			
+		}
+}   }
 
 
 
@@ -176,9 +180,9 @@ public void selectAllCheckboxes(String by) {
  */	
 @AfterSuite
 public void tearDown() {
-	if (driver!= null) {
-		driver.quit();
-	}
+//	if (driver!= null) {
+//		driver.quit();
+//	}
 }
  
 }

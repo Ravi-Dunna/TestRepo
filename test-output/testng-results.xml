@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-31T22:54:50 CET" name="Default suite" finished-at="2021-10-31T22:55:03 CET" duration-ms="12411">
+  <suite started-at="2021-11-01T02:37:35 CET" name="Default suite" finished-at="2021-11-01T02:37:48 CET" duration-ms="13097">
     <groups>
     </groups>
-    <test started-at="2021-10-31T22:54:50 CET" name="Default test" finished-at="2021-10-31T22:55:03 CET" duration-ms="12411">
+    <test started-at="2021-11-01T02:37:35 CET" name="Default test" finished-at="2021-11-01T02:37:48 CET" duration-ms="13097">
       <class name="com.Varden.testcases.MylistTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:54:42 CET" name="setUp" finished-at="2021-10-31T22:54:50 CET" duration-ms="8008" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:27 CET" name="setUp" finished-at="2021-11-01T02:37:35 CET" duration-ms="7834" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="myList()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:54:50 CET" name="myList" finished-at="2021-10-31T22:54:56 CET" duration-ms="5379" status="PASS">
+        <test-method signature="myList()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:35 CET" name="myList" finished-at="2021-11-01T02:37:40 CET" duration-ms="5754" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- myList -->
-        <test-method signature="createNewList()[pri:1, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:54:56 CET" name="createNewList" finished-at="2021-10-31T22:55:00 CET" duration-ms="4254" status="PASS">
+        <test-method signature="createNewList()[pri:1, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:40 CET" name="createNewList" finished-at="2021-11-01T02:37:45 CET" duration-ms="4463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNewList -->
-        <test-method signature="changeNameOfList()[pri:2, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:55:00 CET" name="changeNameOfList" finished-at="2021-10-31T22:55:00 CET" duration-ms="89" status="PASS">
+        <test-method signature="changeNameOfList()[pri:2, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:45 CET" name="changeNameOfList" finished-at="2021-11-01T02:37:45 CET" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- changeNameOfList -->
-        <test-method signature="changeColorOfUnit()[pri:3, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:55:00 CET" name="changeColorOfUnit" finished-at="2021-10-31T22:55:01 CET" duration-ms="550" status="PASS">
+        <test-method signature="changeColorOfUnit()[pri:3, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:45 CET" name="changeColorOfUnit" finished-at="2021-11-01T02:37:45 CET" duration-ms="542" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- changeColorOfUnit -->
-        <test-method signature="removeList()[pri:4, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:55:01 CET" name="removeList" finished-at="2021-10-31T22:55:03 CET" duration-ms="2029" status="PASS">
+        <test-method signature="removeList()[pri:4, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:45 CET" name="removeList" finished-at="2021-11-01T02:37:47 CET" duration-ms="1971" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeList -->
-        <test-method signature="name()[pri:5, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:55:03 CET" name="name" finished-at="2021-10-31T22:55:03 CET" duration-ms="40" status="PASS">
+        <test-method signature="noDispalyForInvalidSearch()[pri:5, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:47 CET" name="noDispalyForInvalidSearch" finished-at="2021-11-01T02:37:48 CET" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- name -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-10-31T22:55:03 CET" name="tearDown" finished-at="2021-10-31T22:55:04 CET" duration-ms="1052" status="PASS">
+        </test-method> <!-- noDispalyForInvalidSearch -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Varden.testcases.MylistTest@38145825]" started-at="2021-11-01T02:37:48 CET" name="tearDown" finished-at="2021-11-01T02:37:48 CET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
